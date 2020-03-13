@@ -1,0 +1,65 @@
+*오라클 설치 
+administrator : sys  or system --> 패스워드 : oracle  
+
+*오라클 설치후 제어판-관리도구-서비스- Oracle 설정을 확인
+  시작 - 오라클 - 데이터베이스로 시작으로 오라클을 실행 
+
+
+
+
+  
+*오라클 데이터베이스에서 자신의 계정 만들기 
+  **계정생성
+시작- Run SQL Commend Line실행
+connect            
+ID는 system, 비번은 위에 설치할때 입력한 비번
+create user [ID입력] identified by [패스워드]
+grant connect, resource to [ID입력]
+-- connect 테이블 생성 및 조회 권한 , resource -- pl sql 사용가능 
+drop user sadqueen;        //sadqueen을 삭제했습니다.
+
+-- 실제 예
+
+SQL*Plus: Release 11.2.0.2.0 Production on 목 8월 9 20:36:35 2012
+
+Copyright (c) 1982, 2010, Oracle.  All rights reserved.
+
+SQL> connect;
+Enter user-name: system
+Enter password:
+Connected.
+
+SQL> create user scott identified by tiger;
+
+User created.
+
+SQL> grant connect,resource to scott;
+
+Grant succeeded.
+
+
+
+  
+*오라클 jdbc 드라이버를 java 실행 환경에 설정하기 
+ C:\oraclexe\app\oracle\product\10.2.0\server\jdbc\lib\ojdbc14.jar 를 copy,
+ C:\Program Files\Java\jdk1.8.x\jre\lib\ext\ 밑에 paste
+ 
+*오라클을 이클립스에서 사용하기 위한 연동 설정하기 
+switch workspace -> jdbc workspace 를 생성한다. 
+
+oracle 과 eclipse 연동을 위한 tip
+       java EE perspective 로 이동 - Data Source explorer 하단 탭을 이동  
+       오른쪽 마우스 클릭  - new - new Connection Profiles - Oracle 선택 - 이름 oracle로
+       입력 - Driver 선택 창 - 오른쪽 상단부 New Driver Definition을 클릭 -
+       Name/Type 탭에서 Oracle Thin Driver 10 을 선택 후 - Jar list 탭에서 
+       Add Jar/zip 선택후 - C:\Program Files\Java\jdk1.7.x\jre\lib\ext\ojdbc14.jar를
+        선택 - Properties 탭의 Properties 의 connection Url 을 
+       jdbc:oracle:thin:@127.0.0.1:1521:xe 로 입력 , Database Name을 xe로 입력 
+       User ID 를 scott, Password를 tiger로 입력한다. 
+       설정 마치고 Test Connection으로 테스트 후 성공하면 연결이 OK!! 
+       .sql 파일로 이동하여 type:Oracle_10 , Name:oracle , Database : xe 를 설정하고 
+       query 실행해본다. --> query 실행시 영역 선택하고 
+       Execute Selected Text로 주로 사용
+
+
+ 
