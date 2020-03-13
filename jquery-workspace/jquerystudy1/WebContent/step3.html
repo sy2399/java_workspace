@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery basic3</title>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+	//현 문서의 모든 버튼에 대해 클릭이벤트가 발생할 경우 
+	//자신의 value를 alert로 출력하도록 이벤트 등록
+	$(document).ready(function(){
+		//:button 입력양식 중 버튼만을 대상으로 이벤트 처리
+		$(":button").click(function(){
+			alert($(this).val());
+			$(this).fadeOut(3000);
+		});		
+	});
+</script>
+</head>
+<body>
+	<input type = "button" value = "버튼1">
+	<input type = "button" value = "버튼2">
+	<input type = "button" value = "버튼3">
+	<input type = "button" value = "버튼4">
+	<input type = "button" value = "버튼5">
+</body>
+</html>

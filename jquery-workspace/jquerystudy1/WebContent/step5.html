@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery selector id, class</title>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+	//id가 menu인 요소만을 대상으로 클릭했을 때, 
+	//자신의 text가 alert로 출력되게 event정의
+	$(document).ready(function(){
+		$("#menu").click(function(){
+			alert("오늘메뉴는 뚝불");
+			
+		});
+		//class = food인 요소들은 클릭하면 자신의 배경색이 yellow되도록
+		$(".food").click(function(){
+			$(this).css("background", "red");
+		})
+	});
+</script>
+</head>
+<body>
+<p id = "menu">오늘메뉴</p>
+<hr>
+<p>내일메뉴</p><br>
+<p class = "food">짜장면</p><br><br>
+<div class = "food">피자</div><br><br>
+<span class = "food">치킨</span><br><br>
+
+</body>
+</html>

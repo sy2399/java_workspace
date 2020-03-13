@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery basic4</title>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//alert("아메리카노");
+		//현 웹문서의 a(anchor)tag를 클릭하면
+		//이동하시겠습니까? 의사를 확인한 후 이동하도록 event 정의
+		$("a").click(function(){
+			//alert("dd");
+			return confirm($(this).text() + " 이동하시겠습니까?");
+		});
+	});
+</script>
+</head>
+<body>
+<a href = "http://www.daum.net">다음</a><br>
+<a href = "http://www.naver.com">네이버</a><br>
+<a href = "http://www.google.com">구글</a><br>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery basic2</title>
+<style type="text/css">
+	div{
+		background-color: yellow;
+	}
+	span{
+		background-color:lime;
+	}
+</style>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+	/*
+		document가 준비되면 익명함수가 실행되게 한다
+		
+		$(document) : document 객체를 jquery 객체로 만들어
+					  jQuery function인 ready() 에 익명함수를 등록할 수 있게 함
+					  
+		ready에 등록되는 익명함수는 주로 현 페이지의 행위(동작)에 대한 일괄적인 정의를 한다
+			
+		javascript open source library인 jQuery는 
+		강력한 Selector를 지원하므로 이를 이용하여 문서의 모든 개체에 대해 독립적인 동작을 등록할 수 있다
+
+	*/
+
+	/*
+	ex) 현 문서의 모든 div는 사용자에 의해 클릭 이벤트가 발생하면
+		alert로 자신의 문자열이 출력될 수 있도록 이벤트함수를 등록한다
+	*/
+	$(document).ready(function(){
+		//alert("1");	
+		
+		//현 문서의 div요소를 클릭하면 해당 익명함수가 실행되게 명시(or 등록)
+		//Selector를 이용해 현 문서의 div수와 관계없이 한번 정의해서 이벤트 처리를 할 수 있다
+		//--> 개발 생산성이 높아지고 유지보수성도 향상된다
+		/* $("div").click(function(){
+			//alert("div누름");
+			alert($(this).text());
+			//this: 현재 이벤트 대상
+		}); */
+		
+		//span요소도 위와 같은 이벤트가 필요한 경우 아래와 같이 select
+		$("div,span").click(function(){
+			//alert("div누름");
+			alert($(this).text());
+			//this: 현재 이벤트 대상
+		});
+	});
+</script>
+</head>
+<body>
+	<div>divTest1</div>
+	<hr>
+	<div>divTest2</div>
+	<hr>
+	<span>spanTest1</span>
+	<hr>
+	<div>divTest3</div>
+</body>
+</html>

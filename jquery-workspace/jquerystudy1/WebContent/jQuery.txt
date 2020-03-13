@@ -1,0 +1,12 @@
+**jQuery**
+javascript opensource library
+- Front 개발에 필요한 다양한 기능을 제공
+- 강력한 selector를 제공
+- 크로스 브라우징 : 다양한 브라우저에서 동일한 동작
+	- html 웹 문서 컨텐트
+	  css 디자인
+	  javascript 행위(동작)
+	  
+	  html, 즉 문서 컨텐트와 독립적으로
+	  문서에 대한 행위를 일괄적으로 정의(등록)하여
+	  생산성과 유지보수성을 향상시킨다

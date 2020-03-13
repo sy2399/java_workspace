@@ -1,0 +1,45 @@
+ 
+  table{
+		border-collapse: collapse; 
+	}
+	table,th,td{
+		border: 1px solid black;
+	}
+	td,th{
+		padding: 15px;
+	}
+	/* 한번도 클릭하지 않은 링크    */
+	a:LINK{ 
+		color: #888; 
+		text-decoration: none;
+	}
+	/* 마우스 오버시 색상 변경 */
+	a:HOVER {
+		color:#ffcc00;
+		text-decoration: none;
+	}
+	/* 한번 이상 방문한 링크 색상 및 언더라인 생기지 않게 함 */
+	a:VISITED {
+		color:#FAAC58;
+		text-decoration: none;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
