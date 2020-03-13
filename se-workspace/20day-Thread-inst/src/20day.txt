@@ -1,0 +1,78 @@
+**20일차**
+-Thread 개념 
+-Thread 생성 
+-Thread 실행 흐름 및 제어 
+- synchronized ( 동기화 처리 )
+---------------------------------
+- Thread 개념 
+   Process : 현재 실행 중인 프로그램 	
+   Thread : Process 내의 세부적 실행 단위 
+   				참고) 사전적인 의미: 실 .. 여러개의 실이 모여 옷감이 만들어 진다 
+   Multi-Threading : 다수의 스레드가 동시에 실행 
+   							(ex - 동영상플레이어 실행 ( 프로세스 ) )
+   									영상스레드 + 음향스레드 + 자막스레드 등이 
+   									멀티스레딩된다
+ -Thread 생성
+ 	1) extends Thread  	
+ 	2) implements Runnable   													
+	
+-Thread 실행 흐름 및 제어 
+  start() : 스레드를 실행가능상태로 보낸다 
+  			 이후 jvm에 의해 스케줄링을 받으면 실행상태로 
+  			 바뀐다는 것을 의미한다 
+  run() : 스레드 실행 
+  		    jvm에 의해 호출되어 스레드의 실행이 된다 
+  
+  Thread의 우선순위 
+  자바 스레드 우선순위는 1~10까지 있고
+  기본(별도로 명시하지 않으면)은 5 ,
+  가장 낮은 우선순위는 1이다
+  가장 높은 우선순위는 10이다 
+  스레드의 우선순위를 설정하면 스케줄링시에 
+  스케줄 확률이 높아지거나 낮아질 수 있다 
+  
+  - synchronized ( 동기화 처리 )
+  자바 스레드는 데이터를 공유할 수 있다 -> 서버 자원을 절약 
+  다시 말하면 여러 스레드는 하나의 자원(데이터)을 공유해서 사용할 수 있다 
+  공유된 자원(데이터)을 여러 스레드가 조작할 경우 발생할 수 있는 
+  문제에 대비하기 위해 synchronized(동기화)처리를 통해 
+  특정부분은 단일 스레드 실행환경으로 만든다 
+  
+  ex) 화장실 ( 열쇠 ) 
+       Database Connection Pool 
+       
+  **thread-safe**      
+  멀티스레딩시 안전성 여부 ( synchronized 처리 되어 있다는 의미 ) 
+  synchronized 0        synchronized x 		
+  Vector      				ArrayList 
+  Hashtable 				HashMap
+  StringBuffer				StringBuilder 
+  
+  
+  
+  
+  
+  
+  
+   
+  		    			 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

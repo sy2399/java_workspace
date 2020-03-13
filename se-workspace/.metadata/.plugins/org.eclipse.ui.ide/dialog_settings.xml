@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\seo\132-workspace\se-workspace\25day-network-chatting-inst"/>
+			<item value="C:\Users\KOSTA\Desktop\24day-26day-network-inst"/>
+			<item value="C:\seo\132-workspace\se-workspace\23-24day-network-inst"/>
+			<item value="C:\seo\132-workspace\se-workspace\21day-schoolproject-serializable-inst"/>
+			<item value="C:\seo\132-workspace\se-workspace\18day-schoolproject-exception-console-inst2"/>
+			<item value="C:\Users\KOSTA\Desktop\코드품질최적화\실습자료\CodingOptExercise"/>
+			<item value="C:\seo\132-workspace\se-workspace\12day-schoolproject-array-step2-inst"/>
+			<item value=""/>
+			<item value="C:\java-kosta\se-workspace\2day-inst"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+			<item value="C:\Users\KOSTA\Desktop\2day-inst.zip"/>
+		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="212" key="DIALOG_X_ORIGIN"/>
+		<item value="185" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

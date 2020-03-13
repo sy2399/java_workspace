@@ -1,0 +1,71 @@
+**12day**
+- 간단 복습 
+- Interface 
+
+------------------------------------
+- 복습 
+자바 특징 - 플랫폼 독립적 , 객체지향언어
+객체지향 - 분석설계기법 ( 객체 관계 중심 ) - OOAD - UML 
+객체 - 시스템 기본 단위 , 속성과 기능으로 구성 
+클래스는 객체의 설계도이다 
+자바의 데이터 타입 - 기본형과 참조형 
+클래스 구성 -  package -> import 
+-> class -> instance v -> constructor -> method 
+제어문 - 조건문 ( if , switch ) , 반복문(for,while,do~while) 
+변수의 종류 : instance variable , local variable 
+				 class variable(static variable)
+배열(Array) : 다수의 데이터를 관리하는 객체 
+**객체지향의 주요개념 : Encapsulation , Inheritance , Polymorphism
+오버로딩- 다양한 매개변수,  오버라이딩 - 부모메서드 재정의 
+this , super 
+static : 객체 생성없이 클래스명으로 접근해 사용가능 
+		  클래스 로딩시 메모리(method area)에 한번 적재 
+abstract : 추상 , 자식에게 구체화를 강제 
+			 표준화에 기여 
+			 직접 객체화 될 수 없으나 부모로서의 상속과 다형성은
+			 모두 지원한다 
+--------------------------------------
+- Interface ( 인터페이스 ) 
+  : 다양한 계층 구조 형성을 통한 다형성 적용     
+    
+    다중 상속의 효과 
+    	-> 상속의 장점은 부모 멤버를 물려받고 계층구조 형성을 
+    		통한 다형성 적용환경을 마련하는 데 있다 
+    		-> 인터페이스는 상속의 장점 중 
+    				계층구조 형성을 통한 다형성 적용
+    				-> 인터페이스는 다중 상속(구현)이 가능하다 
+    				    ex) public class SuperMan extends Person implements Flyer,Fighter{}
+    					-> 인터페이스는 추상메서드와 상수를 정의한다 
+    					   -> 인터페이스끼리는 상속이 가능하다 
+    					        ex) public interface A extends B{} 	
+    					
+    		abstract 와 interface 비교 
+    		공통점 : 추상메서드를 통해 하위클래스 구현 강제 -> 표준화 
+    				   직접 객체화 될 수 없다 
+    				   다형성 지원 
+    		차이점 : abstract 는 단일 상속 , 멤버를 자식에게 물려줄 수 있다 
+    				   interface는 다중 상속(구현) 		   			
+    					
+    					        		 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+		  
+		   
+				 
+ 
+
+
+
+
+
+
+
+
+
+
+

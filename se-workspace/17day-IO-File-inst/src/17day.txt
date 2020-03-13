@@ -1,0 +1,138 @@
+**17일차 주요목차**
+-review 
+-IO 
+ File 
+ ---------------------------
+ -review 
+  자바 특징 : 플랫폼 독립적, 객체지향언어 , 가비지컬렉션 , 멀티스레딩 .. 
+  자바 개발 환경 :   jdk > jre > jvm 
+  객체지향개념 : 객체를 기본단위로 하여 객체와 객체의 관계를 중심으로
+  					   시스템을 분석 설계하는 기법 
+  객체 : 속성과 기능으로 구성 , 시스템의 기본 단위 
+  클래스 : 객체 생성을 위한 틀 (or 설계도)
+  객체지향 주요개념 세가지 :
+  Encapsulation 캡슐화   인터페이스는 공개하고 구현부는 감춘다
+  Inheritance  상속   부모멤버를 물려받고 계층구조를 형성 
+  Polymorphism 다형성  하나의 메세지방식으로 다양한 객체들이 각자의 
+  									방식으로 동작하는 성질 
+  									
+  자바 데이터 타입 :  primitive data type , reference data type 
+  							-> Wrapper class 
+  							    : 기본형 데이터 타입의 데이터 --> 참조형으로 포장 
+  							     ex) Integer , Double ... 
+  							     auto boxing  
+  							     : 기본형(primitive data type) 데이터 타입의 데이터가
+  							       참조형(reference data type) 데이터 타입으로 
+  							       자동 변환되는 것 
+  							       ex) Object obj=1; 
+  							             sysout(obj.getClass()); 
+  							             --> Integer (Wrapper class) 타입으로 자동 변환
+  							     
+  	변수 :    instance variable -> heap  객체 생성시 초기화 , 객체 속성 저장 
+  				local variable -> stack  메서드 또는 생성자에서 일시적 사용 
+  				class(static) variable 	
+  				-> method area  클래스 로딩시 한번 적재하여 
+  										객체 생성없이 공유해 사용   														
+    제어문 :  조건문 if , else if , else 
+    					   switch 
+    			  반복문  for , while , do while 
+    			  
+    오버라이딩: 부모 메서드를 재정의 
+    오버로딩 : 다양한 매개변수 정의 
+    
+    this : 현재 실행중인 자신을 참조 
+    super : 부모를 참조 
+    
+    instanceof : 객체의 타입을 비교하는 연산자 , is a 관계 (계층구조)가 
+    					성립되면 true 
+    Object down casting 
+    : 객체 형 변환  , 부모 타입으로 자식 객체가 참조될 경우 
+    상속받는 멤버와 오버라이딩한 메서드는 사용될 수 있으나 
+    자식의 독자적 멤버는 사용될 수 없으므로 객체 캐스팅 절차를 통해 
+    형 변환 후 사용할 수 있다 
+    
+    static : 객체 생성없이 클래스 이름으로 사용가능 
+              클래스 로딩시에 한번 method area 공간에 데이터 적재 
+    
+    abstract : 추상 클래스와 추상 메서드 선언시 사용 
+    			  직접 객체 생성은 불가하고 ( 부모로서의 모든 역할은 동일 ) 
+    			  추상 메서드를 선언하면 
+    			  하위 클래스는 자신이 추상 클래스가 되지 않은 상태에서는
+    			  반드시 추상 메서드를 구현해야 한다     
+    			  --> Template method design pattern     
+    			      --> 피자의 토핑 
+    			       
+    Interface ( 인터페이스 ) 
+    --> 다중 상속( 다양한 계층구조) 을 통한 
+          다형성 적용 
+          --> 자바는 단일 상속, 인터페이스를 통해 
+          		다양한 계층구조를 형성하여 
+          		다형성을 적용하는 데 목적이 있다 
+          		--> 표준화 
+          		사례)  플레이어 (재생 버튼 ) 
+     
+     final :  상수 , 오버라이딩 방지 , 상속 방지 
+     
+     Collection 계열 : 자료구조 
+     Set : 중복방지
+     List : 인덱스 (순번)으로 관리
+     Map : key 와 value 
+     Stack : 선입후출 
+     Queue : 선입선출 
+     
+     Exception handling 
+     : 예외 상황이 발생할 경우 
+       대처 방안을 실행하고 
+       프로그램을 정상적으로 동작시키는 데  목적이 있다 
+       try  예외 발생 예상 지점 블럭화 
+       catch  예외 발생시 대안 실행  즉 예외 처리 
+       finally 항상 실행 
+       throws 예외 발생시 호출한 곳으로 예외를 던지겠다 
+       throw  예외를 고의로 발생시키겠다 
+     
+     
+     
+     
+     
+     
+     
+          		
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    									
+  									
+  									
+  									
+  									
+  									
+  									
+  									
+  									
+  									
+  
+  
+  
+  
+  
+  
+  
+  
+  	
+ 
+  

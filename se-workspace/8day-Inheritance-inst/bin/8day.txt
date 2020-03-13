@@ -1,0 +1,127 @@
+   **8일차 주요목차**
+   
+   상속(Inheritance)
+   super keyword 
+   오버라이딩 
+   다형성(Polymorphism) 
+   
+   ----------------------------------------
+   상속(Inheritance)
+   : 자식이 부모의 멤버(변수,메서드)를 물려받는 것을 말함
+     is a relationship 
+     ex)  사람은 동물이다. 
+           매니저는 직원이다 
+           
+           자식(sub class)   부모(super class) 
+    class Person extends Animal{} 
+   
+    상속관계에 있더라도 Encapsulation 적용된 
+    멤버(변수,메서드)는 접근에 제약이 있다 
+    만약 부모의 멤버변수(인스턴스변수)가
+    private 접근제어자로 선언되어 있다면 
+    아무리 자식이라도(클래스가 다르므로)
+    직접 접근할 수 없다 
+    접근은 setter/getter를 이용해야 한다 
+    
+    접근제어자(access modifier)
+    public>protected>default>private
+    
+    public : 어디서나 접근가능 
+    protected : 같은 팩키지 내에서 접근가능 
+    				단 상속관계에 있을 때는 어디서나 접근가능 
+    default : 같은 팩키지 내에서만 접근가능 
+    private : 자신의 클래스 내에서만 접근가능 
+    
+    상속 원리 super keyword
+    상속관계가 형성되고 
+    자식 객체가 생성시작시점에 부모 객체 먼저 우선적으로 생성되고
+    마지막에 자식 객체가 생성된다 
+    
+    모든 생성자에는 첫 라인에 super() 가 명시되고 
+    만약 명시되어 있지 않으면 컴파일시에 자동 삽입된다 
+    super()는 부모 생성자를 호출하여 객체 생성하게 한다  
+    
+    ex)  class GrandParent{}
+          class Parent extends GrandParent{}
+          class Child extends Parent{}
+          
+          new Child();  실행하면 
+          GrandParent -> Parent -> Child 순으로 생성됨
+    
+    자바는 단일 상속을 채택한다 
+    다중 상속의 장점은 Interface로 보완한다 
+    
+    - 오버라이딩 ( 메서드 오버라이딩 ) 
+    상속받은 부모 메서드를 자신에 맞게 재정의(or 수정)
+    -> 리턴타입 메서드명 매개변수 동일해야 하고
+        접근제어자는 접근범위가 더 좁아지면 안됨 
+        부모 메서드에서 명시하지 않은 Exception을 
+        throws 할 수 없다(나중에 공부)
+        
+    * 참고) 오버로딩 : 같은 이름(메서드 or 생성자)으로 
+    					    메서드를 여러개 정의하고
+    					    다양한 매개변수를 정의하여 사용자 편의성을 높인다   
+    
+   - Polymorphism ( 다형성 ) 
+    "One Interface ,  Multiple Implements " 
+    하나의 메세지 방식으로 다양한 객체들이 각자의 방식으로 
+    동작하는 성질 
+    --> 메세지 방식 하나만 이해하면 
+         다양한 구현체들을 실행시킬수 있다
+         	--> 재생(플레이)버튼을 활용하면 
+         			곰플레이어, 알송플레이어, 이클립스 , CDPlayer , LPPlayer
+         			등과 같은 다양한 플레이어를 실행할 수 있다 
+    
+    Animal a=new Person(); 
+    자식 Person 객체는 부모 Animal 타입의 변수로 참조될 수 있다 
+    
+    new Person()  ------->     public void receive(Person p){}  
+    new Dog() ------->     public void receive(Dog d){} 
+    new Tiger()------->     public void receive(Tiger t){} 
+    new Pig()  ------->     public void receive(Pig p){}     
+        			
+    ---------------다형성이 적용되므로 아래처럼 하나의 
+    메서드에서 모두 처리 가능 --------------------------------------
+    new Person()  ------->     public void receive(Animal a){}  
+    new Dog()
+    new Tiger()
+    new Pig() 
+    
+    
+    **9일차 주요목차**
+    - review 
+    - Object casting 
+    - instanceof 연산자 
+    - java.lang.Object class 
+    - 실습예제 
+    
+    --> 복습 :  상속의 개념 
+    			   super 
+    			   오버로딩과 오버라이딩 
+    			   다형성(Polymorphism)의 개념 
+    	step9 코드분석 
+    	step10,11 코드분석 		   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

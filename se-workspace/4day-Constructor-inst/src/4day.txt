@@ -1,0 +1,109 @@
+ **4일차 주요목차**
+    - review 
+    - this keyword     
+    - Constructor ( 생성자 )   
+    - import 
+    - 자바의 데이터 타입 
+    	1) primitive data type : 정수형 , 실수형 , 문자형 , 논리형 
+    	2) reference data type (참조형 데이터 타입)     
+    -----------------------------------------------
+    -review :  setter/getter method 구현 
+    
+    -this : 현재 객체(instance)를 가르키는 자바 키워드 
+    ex)
+    		private String name;// instance 변수(variable) 
+    		// 아래 name은 지역변수(local variable) 이자 매개변수
+    		public void setName(String name){
+    			//this를 이용해 instance variable를 가르킨다 
+    			this.name=name;
+    		}
+    
+    - Constructor ( 생성자 )  
+    : 객체 생성시 호출되어 실행되는 클래스의 구성요소 
+    ex)
+    		new Person() ------call----->  class Person{
+    													Person(){}
+    												}
+    
+    특징 :  클래스에서 생성자를 명시하지 않으면 
+    		 컴파일시에 컴파일러가 기본생성자를 삽입 
+    		 생성자는 클래스명과 동일하다 
+    		 메서드와는 다르게 리턴타입이 없다 
+    생성자를 명시하는 이유?
+    객체 초기화 작업 
+    다시 말하면 객체 생성시점에 필요한 작업을 명시한다 
+    (ex - 신용카드 발급전에 신용정보받아서 확인 ) 		 
+    
+    - import 
+    다른 팩키지의 자원( 클래스 or 인터페이스 .. ) 
+    을 사용하기 위해 선언 
+    ex)  import step5.MemberVO; 
+    	  import java.util.ArrayList;
+    단축키  ctrl+shift+o 
+    	  
+    **class 구성요소**
+    package 
+    import 
+    class 
+    	instance variable 
+    	Constructor 
+    	method 
+    
+     - 자바의 데이터 타입 
+    	1) primitive data type(기본형):
+    		정수형 , 실수형 , 문자형 , 논리형 
+    	   int age=18; --> int 가 data type 
+    	   
+    	   byte단위        1byte         2byte       4byte     8byte
+    	   정수형				byte		   short        int         long 
+    	   실수형											 float       double 
+    	   문자형							   char
+    	   논리형				boolean  
+    	
+    	 참고)  정수형의 기본형은 int , 실수형의 기본형은 double 
+    	
+    	2) reference data type (참조형 데이터 타입)
+    	참조형 데이터 타입은 
+    	기본형을 제외한 모든 데이터 타입을 말한다 
+    	일반적으로 클래스명(or 인터페이스)과 동일하다
+    	ex)    Person   p; 
+    		참조형타입  참조변수 
+    		
+    	ex2)   Person p=new Person();	
+    		위 문장을 풀어서 설명하면 
+    		Person 참조형 데이터 타입의 
+    		p 변수공간에 Person 객체 생성 후 
+    		참조값(or 주소값)을 참조변수에 할당한다 
+    		
+   **5일차 주요목차**
+   - 연산자 
+   - 제어문 
+      1) 조건문 
+      2) 반복문 
+    - 변수범위 ( instance variable , local variable scope ) 
+    
+    
+    
+    
+    
+    
+    
+     		
+    		
+    		
+    		
+    		
+    		
+    		
+    	
+    	   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

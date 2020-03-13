@@ -1,0 +1,66 @@
+**14day**
+- Iterator 
+- java.util.Map 
+- Stack , Queue 
+- String과 StringBuilder(or StringBuffer ) 
+---------------------------
+review :  Collection interface :  Collection 계열의 최상위 인터페이스
+			 Set : Collection Interface의 하위인터페이스이고 
+			 		중복을 허용하지 않는다 
+			 		class : TreeSet ( 정렬 ) ,  LinkedHashSet ( 순서 ) 
+			 List : Collection Interface의 하위인터페이스이고
+			 		 순번으로 관리된다 
+			 		 class : ArrayList ( 검색에 장점 ) , 
+			 		 			 LinkedList ( 삽입 , 삭제에 장점 ) 
+ -------------------------------------
+  Iterator :  사전적 의미는 반복자 
+  				 즉 컬렉션 내의 요소를 반복해서 열거하기 위한 표준을 제공 
+  				 hasNext() : boolean   다음 요소가 있으면 true 없으면 false 
+  				 next() : 다음 요소를 반환 
+  Map :  key 와 value 쌍으로 저장한다 
+  			key 를 통한 검색,수정,삭제에 장점 
+  			-> key는 유일해야 한다 
+  
+  Stack : 선입후출 First In , Last Out 
+  Queue : 선입선출 First In, First Out 
+  
+  
+  **15일차 주요목차**
+  - String / StringBuilder ( StringBuffer ) 
+  - Exception Handling ( 예외 처리 ) 
+  	try
+  	catch
+  	finally
+  	throws
+  	throw 
+  	
+  ------복습 포인트------	
+  - abstract  와 interface 공통점 , 차이점 
+  - Iterator 사례를 기반하여 Interface 를 설명 
+  - Set, List , Map 특징 
+  - Stack , Queue 특징 
+  
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  
+  
+  
+  
+  
+  
+  			 		 			 
+			 		 
+			 		 
+			 		 
+			 		 
+			 		 
+			 		 
+			 		 
+			 		 
+			 		 
+			 		 

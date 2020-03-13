@@ -1,0 +1,96 @@
+***6일차 주요목차***
+  - 변수범위 ( instance variable , local variable scope ) 
+  - 객체(Object) 초기화 과정 
+  - has a relationship 
+  	사람이 스마트폰을 소유하다 
+  - 배열(Array) 	
+  
+  -----------------------------------------
+  - 변수범위 ( instance variable , local variable scope ) 
+    자바 변수 종류는 instance variable , local variable , class variable(static)
+    자바 메모리 구조는 
+    method(or class) area , stack , heap 영역으로 구성 
+    method area : class의 메타정보(method정보, static 정보 등)
+    stack : local variable(지역변수)의 정보가 저장 
+    heap : instance variable(객체의 멤버변수)의 정보가 저장 
+    
+    local variable(지역변수)
+    : 메서드 또는 생성자 단위에서 선언된 변수를 말한다 
+      stack(선입후출의 특징) 메모리 영역에 저장
+      메서드나 생성자 내에서 일시적으로 사용된다 
+      지역변수(local v)는 반드시 명시적 초기화가 필요하다 
+      ( ex -  int i=0; ) 
+      제어문 내에서 선언될 경우 자신의 {  } 실행영역에서만 사용가능.
+      -> 지역변수는 선언된 실행영역의 수행이 마치면 stack메모리에서 해제 
+    
+  instance variable ( or object member variable ) 
+  : 객체의 속성 정보를 저장 
+    heap 영역에 저장 
+    선언만 해도 기본 초기화가 된다 ( 지역변수는 명시적 초기화가 필요 )
+    (ex - String name; --> null 로 초기화 , int age; --> 0 으로 초기화
+           boolean flag; --> false 로 초기화 )
+  
+  - 객체(Object) 초기화 과정 
+     1. 인스턴스 변수의 기본 초기화 
+     	ex) 참조형(reference) 은 null,  정수형은 0 , boolean 형 false
+     2. 인스턴스 변수의 명시적 초기화 
+         ex) private int age=1;
+     3. 생성자에 의한 초기화     
+         
+         
+      - has a relationship 
+  	    사람이 스마트폰을 소유하다     
+  	  - UML ( Unified Modeling Language ) 
+  	    : 객체지향분석설계(OOAD)시 사용하는 모델링 언어(표기법)
+  	    ex) class diagram , usecase diagram , sequence diagram ..
+  	    
+  	    -class diagram 관계 
+  	     association 연관 관계  use a 
+  	     aggregation 집합 관계  has a 
+  	     composition 긴밀한 집합관계 consist of 
+  	       
+   - 배열(Array) 	
+    : 다수의 데이터를 효과적으로 관리하기 위해 사용 
+   1. primitive data 를 저장하는 배열    
+   		배열선언  int ages[];  or  int [] ages;
+        배열생성  ages=new int[3];  // 방길이 3개짜리 배열 생성 
+        배열요소에 정보할당  ages[0]=22;
+        						   ages[1]=33;
+        						   ages[2]=11;
+        sysout(ages[2]); // 11 출력 
+        sysout(ages.length); // 3 출력 
+        
+   **7일차 주요목차**     
+   - reference data 를 저장하는 배열 
+   
+   **8일차 주요목차**
+   오버로딩 
+   상속(Inheritance)
+   super keyword 
+   오버라이딩 
+   다형성(Polymorphism) 
+   
+         
+         
+         
+         
+         
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

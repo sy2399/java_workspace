@@ -1,0 +1,128 @@
+**2일차 목차**
+- java 특징
+  	 
+- 객체지향개념 
+   객체란(Object)
+   클래스란(Class) 
+   객체와 클래스의 관계 
+   객체지향이란(Object-Oriented) 
+
+-  자바기본문법 ( 클래스,변수,메서드 ) 
+-------------------------------------------------
+
+- java 특징
+  플랫폼 독립적 , "write once , run anywhere"
+  jvm ( java virtual machine ) 이 통역자 역할 담당 , 실행 주체 
+  jdk > jre > jvm 
+  
+  객체 지향 언어이다 
+  
+  - 객체지향개념 
+   객체란(Object)
+   : 시스템의 기본 단위 
+     객체는 속성과 기능으로 구성 
+     속성 : variable , attribute , field 
+     기능 : method , operation    
+     ex) 자동차 객체의 속성 : 엔진,바퀴 ... 
+     	  자동차 객체의 기능 : 출발하다 , 가속하다 , 멈추다  	
+   
+   클래스란(Class) 
+   	: 객체 생성을 위한 틀 or 설계도 
+   	
+   객체와 클래스의 관계 
+   :  ex) 붕어빵과 붕어빵틀 
+   		   건물과 설계도 
+   	 클래스는 설계도이고 객체는 설계도로부터 생성되는 건물이다 
+   	 	    
+   객체지향이란(Object-Oriented) 
+   : 시스템 분석 설계하는 기법 중 하나 
+    객체 지향이란 객체를 기본 단위로 상정하고
+    객체와 객체의 관계를 중심으로 시스템을 분석 설계하는 
+    것을 말한다 
+    
+   -객체지향의 주요개념 ( 다음주에 할 예정 ) 
+    Encapsulation 
+    Inheritance 
+    Polymorphism
+  
+  -  자바기본문법 ( 클래스,변수,메서드 ) 
+     
+     1) class  :  객체 생성을 위한 틀 or 설계도
+     				클래스명은 대문자로 시작 , 
+     				합성어 첫글자 대문자로 명시하는 것을 권장
+     				ex) MyHouse 
+      	 [접근제어자] class 클래스명{ }  
+      	 ex)  public class Person{}
+      	 
+      	 package : 클래스들을 효과적으로 분류하여 관리하기 위해 사용
+      	 package 선언은 클래스 가장 상단부에 작성한다 
+      	 ex) package org.kosta;
+      	      class Person{}
+      	      --> Person class는 org 디렉토리 하위의 kosta 디렉토리
+      	           하위의 Person.class로 저장된다 
+   2) 변수 ( variable or attribute ) 
+   : 데이터를 저장하는 공간 
+     [접근제어자] 데이터타입 변수명; 
+     ex) public String name; 
+     변수명은 소문자로 시작하고 합성어 첫글자는 대문자로 명시한다
+     ex) memberName; 
+     
+  3) 메서드 ( 기능 or method or operation ) 
+  객체의 기능을 표현 
+  [접근제어자] 리턴타입(없으면 void) 메서드명(){
+  	기능구현영역 
+  }  
+  ex)  public void study(){
+  			 기능 구현부 
+  		}
+  
+ **3day 주요목차**
+ -method :  passing argument ( 데이터 전달 ) 
+               return value ( 값을 반환 ) 
+- 객체지향개념 중 Encapsulation (다음주 토론 후 발표) 
+- 접근제어자(access modifier) 중 public , private , default 
+- setter/getter method 
+- Constructor ( 생성자 )  
+
+**eclipse 단축키**
+sysout 후 ctrl + space  
+main 후 ctrl + space 
+영역 지정 후 ctrl + shift + /  하면 주석으로 지정 
+영역 지정 후 ctrl + shift + \  하면 주석해제 
+ctrl + shift + f : 코드정리 
+ctrl + f11 : 실행 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

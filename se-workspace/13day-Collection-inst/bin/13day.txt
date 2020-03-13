@@ -1,0 +1,85 @@
+**13day**
+- 주요 개념 review 
+- java.util.Collection 
+  Set
+  List
+  -----------------------------------------------------
+  - 주요 개념 review 
+  	Object-Oriented 객체지향 주요 개념 
+  	Encapsulation :  인터페이스는 공개하고 구현부는 감춘다 
+  						    "public interface , private implementation" 
+  						    -> 이유 or 효과 or 예 
+  	Inheritance : 	부모의 멤버(변수 or 메서드)를 물려준다
+  					    계층구조를 형성한다 ( 다형성 적용환경)
+  	Polymorphism : 다형성 
+  							"One Interface , Multiple implements" 
+  							하나의 메세지 방식으로 
+  							다양한 객체들이 
+  							각자의 방식으로 동작하는 성질 
+  							ex) 플레이어 버튼으로 이클립스(자바실행)
+  								 곰플레이어로 동영상실행
+  								 알송플레이어로 음악실행 등..
+  								 동일한 운전방식으로
+  								 소나타,SM5 등의 다양한 승용차를 운전한다 
+  								 
+  							다형성의 전제는 계층구조형성에 있다 	 				    
+  						    
+  	- abstract 는 추상클래스와 추상메서드를 정의할 때 사용
+  	  직접 객체화되지는 않지만 (new Parent() : compile error ) 
+  	  부모로서 상속 및 다형성의 모든 측면이 가능하다 
+  	  부모차원에서 구현할 수 없는 기능을 강제할 수 있다 
+  	  ( ex - 부모 차원에서 abstract study() 선언하면 자식은 구현하거나 
+  	          자식 스스로도 abstract 로 선언되어 직접 객체화 될 수 없다 )  
+  - interface 
+  	다중상속( 다양한 계층구조 형성 측면 )       
+  	-> 자바는 단일상속이고 다양한 계층구조 형성을 인터페이스가 지원한다 
+  	    -> 하나의 클래스는 자기 정체성과 직결되는 하나의 부모를 상속할 
+  	        수 있고 다양한 계층구조 편입은 인터페이스를 implements 함으로써
+  	        가능하다 
+  	        
+  	--> abstract class와 interface를 비교 설명해본다             
+  	          
+  	          
+  	 - java.util.Collection : jdk 에서 제공하는 자료구조체의 최상위 인터페이스
+ 	  Set : 중복을 허용하지 않는 자료구조 인터페이스 
+ 	  TreeSet : 중복 허용하지 않고 정렬기능이 내장된 구현체 클래스 
+ 	  LinkedHashSet : 중복 허용하지 않고 추가 순서를 기억하는 구현체 클래스 
+ 	  
+      List : 순번으로 관리하는 자료구조         
+  	          
+  	          
+  	 Generic : 타입을 미리 지정하여 
+  	               데이터의 안정성을 보장하고 
+  	               불필요한 캐스팅 절차를 감소시킨다 
+  	 ex) TreeSet<String> set=new TreeSet<String>();
+  	      위 set은 오직 String 타입의 데이터만 추가될 수 있다 
+  	 ex2) ArrayList<ProductVO> shoppingCart 
+  	 						= new ArrayList<ProductVO>();
+  	 		위 list는 오직 ProductVO 타입의 객체만 추가될 수 있다 
+  	      
+  	                 
+  	  					    
+  						    
+  						    
+  						    
+  						    
+  						    
+  						    
+  						    
+  						    
+  						    
+  						    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

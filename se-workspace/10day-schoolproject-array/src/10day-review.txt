@@ -1,0 +1,89 @@
+ - review 
+   java 소개 , 특징 - 플랫폼 독립적 , 객체지향언어 
+   : jvm이 통역자 역할  " write once, run anywhere "
+   
+   객체지향이란 
+   : 분석설계기법 , 객체를 기본 단위로 객체간의 관계를 중심으로
+   						시스템을 분석 설계하는 기법 
+   
+   객체란
+   : 시스템의 기본단위 , 속성과 기능으로 구성 
+   
+   객체와 클래스의 관계 
+   : 클래스는 객체의 설계도이다 ,   붕어빵(객체) 붕어빵틀(클래스)
+   객체의 구성요소 
+   : 속성 ( attribute , variable )
+     기능 (operation , method ) 
+     
+   자바의 데이터타입 - 기본형(primitive) ,       참조형(reference)
+                            정수,실수,문자,논리형     객체의 타입 
+                         
+                         
+   접근제어자 종류와 특성 - public > protected > default > private
+   
+   생성자의 역할 : 객체 초기화 작업 수행 
+      ( ex - 신용카드발급시 신용정보 ) 
+   
+   
+   오버로딩과 			오버라이딩 
+   다양한매개변수		부모메서드재정의
+   
+   Encapsulation 정의와 장점 
+   public interface,private implementation 
+   ( 생산성 측면 , 유지보수성 측면 )    
+   
+   Inheritance 정의와 특성    
+   부모 멤버를 물려받는다 
+   계층구조 형성한다 -> 다형성 적용환경 
+   
+   this와 			super keyword 
+   현재 객체		부모객체 를 가르키는 키워드 
+      
+   Polymorphism 정의  
+   : 하나의 메세지 방식으로 다양한 객체들이 각자의 방식으로 
+   	 동작하는 성질 
+   	 "One Interface, Multiple Implements" 
+   
+   Object Casting ( object down casting ) 
+   : 객체의 형변환 
+   	 부모 타입의 변수로 자식객체가 참조되었을 때 
+   	 부모의 상속받은 멤버와 오버라이딩한 메서드에는 
+   	 바로 접근 가능하나 
+   	 자식객체의 독자적인 멤버에 접근하기 위해서는 
+   	 Object down casting이 필요하다 
+   	  
+   instanceof 연산자 :  객체 타입 비교하는 연산자 
+   							 is a 관계일때 true를 반환한다 
+   							 
+   java.lang.Object :  모든 클래스의 최상위 클래스 
+   						   모든 객체의 부모 객체 
+   
+   java.lang.Object 의 toString() 오버라이딩 
+   : Object의 toString() 메서드는 객체의 주소값을 반환하는 역할.
+    주소값 대신 실제 객체의 속성정보를 반환하도록 오버라이드하여 
+    사용한다. 
+   ex) Person p=new Person();
+   		sysout(p); 와 sysout(p.toString()); 는 결과적으로 동일하다 
+   		Person class에서 toString()을 오버라이딩하면 
+   		주소값 대신 실제 정보가 반환되어 출력될 수 있다 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

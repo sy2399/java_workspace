@@ -1,0 +1,49 @@
+ **15일차 주요목차**
+  - String / StringBuilder ( StringBuffer ) 
+  - Exception Handling ( 예외 처리 ) 
+  	try
+  	catch
+  	finally
+  	throws
+  	throw 
+ ----------------------------------------------
+   - String / StringBuilder ( StringBuffer ) 
+     String :  문자열 상수영역(Literal pool)에 저장 
+     			 동일한 문자열은 중복해서 생성하지 않고 
+     			 동시 참조하여  메모리를 효율적으로 사용한다 
+     			 불변 즉 문자열 자체는 변경되지 않고 
+     			 새롭게 생성된다. ( 이유는 동시 참조되므로 ) 
+     			 
+     StringBuilder(StringBuffer)
+     : 가변 즉 문자열 변경시 자체가 변경된다 
+       문자열이 자주 변경되는 경우에는 
+       String 보다 StringBuilder를 사용하는 것이 효율적이다 
+       
+       StringBuffer와 StringBuilder의 차이 ( 이후 스레드에서 공부할 예정)
+       동기화처리0     동기화처리x 
+       
+  - Exception Handling ( 예외 처리 ) 
+    : 프로그램 실행시 발생할 수 있는 예외에 대한 처리 
+      -> JVM 은 실행시 Error or Exception 이 발생하면 
+      	  즉시 종료된다. (비정상 종료)
+      	  Exception Handling(예외 처리)란 
+      	  예외 발생시 대처 방안을 실행하고 
+      	  프로그램을 정상적으로 실행하는 것을 말한다. 
+      	  
+  	try : Exception 발생 예상 지점 블럭화할때 사용 
+  	catch : Exception 처리 즉 대처방안 
+  	finally : Exception 발생 여부와 관계없이 항상 실행 
+  	throws : 호출한 곳으로 Exception을 던진다 
+  	throw : Exception을 발생시킨다 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   	

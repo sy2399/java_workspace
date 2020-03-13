@@ -1,0 +1,150 @@
+전체 커리큘럼 
+1. Java SE ( 1개월 ) 
+2. Database 와 JDBC (1주 - 분산해서 계속 공부)
+3. WEB 
+   HTML / CSS / Javascript 
+4. WEB 
+    Servlet / JSP 
+    Model2 ( design pattern ) 
+    3,4번 1개월  
+5. Ajax 와 jQuery ( 1주 ) 
+--- semi project --- 
+6. Framework 
+   Spring IOC ( DI ) , AOP 
+   SpringMVC 
+   MyBatis Framework 
+   Tiles Framework 
+   Spring Security 
+   ( 1개월 ) 
+7. 분석설계 (분산해서 수업) 
+    Essence ( 개발방법론의 표준 ) 
+    UML 
+    db modeling ( erd ) 
+8. Final project     
+   (1개월)
+
+blog.daum.net/tico99 --> 당분간 여기에 자료 공유 
+
+크롬 브라우저 설치 
+확장자 보이게 설정 , 숨김파일표시 -> 탐색기 열어서 설정 
+
+jdk (java development kit : 자바 개발 도구) 다운로드 및 설치 
+www.oracle.com 또는 java.sun.com 으로 가서 다운로드 후 설치한다 
+
+Java SE 목차 ( 총 5주 ) 
+- Java 환경설정 및 개요 
+- Java demo program 작성 후 컴파일과 실행하기 
+- 객체지향(Object-Oriented) 개념
+- 자바기본문법 ( 클래스 , 변수 , 메서드 , 생성자 ) 
+- 데이터타입 
+- 조건문 반복문 
+- 배열(array)
+- 상속(Inheritance)
+- 다형성(Polymorphism)
+- static , final  
+- abstract , Interface 
+- Collection ( Set , List , Map ) 
+- Exception 
+- IO 
+- Thread 
+- Network 
+
+**1일차 목차**
+- Java 환경설정 및 개요 
+- Java demo program 작성 후 컴파일과 실행하기 
+jdk 환경설정 : C:\Program Files\Java\jdk1.8.x\bin 까지 
+               시스템 환경변수에 path를 추가하여
+               어디서든 컴파일 및 실행이 되도록 한다. 
+               환경변수 추가 방법 : 컴퓨터 -> 마.오 -> 속성 ->
+               고급 시스템 설정 -> 환경변수 -> 설치된 jdk 패스를
+	       bin까지 복사 붙여넣기하여 추가한다.
+
+java는 컴파일 과정과 런타임(실행) 과정을 거쳐서 수행된다. 
+컴파일(compile) : 개발자가 작성한 java code를 jvm이 읽도록 
+                  기계어(bytecode)로 변환하는 과정 
+		  HelloWorld.java --컴파일--> HelloWorld.class 
+		  ex) javac HelloWorld.java 
+런타임(runtime) : .class 기계어를 java virtual machine 이 
+                  운영체제에 번역하여 프로그램을 실행시키는 것
+                  ex) java HelloWorld 
+
+  HelloWorld.java --compile-- HelloWorld.class -- runtime -- 실행결과
+
+**1일차 주요복습키워드**
+jdk  : java development kit 자바개발도구   
+jvm : java virtual machine 자바가상기계 
+compile : 기계어 코드 생성( .class ) 
+runtime : 프로그램 실행 ( .class가 실행 ) 
+
+
+**2일차 목차**
+- java 특징
+  	 
+- 객체지향개념 
+   객체란(Object)
+   클래스란(Class) 
+   객체와 클래스의 관계 
+   객체지향이란(Object-Oriented) 
+
+-  자바기본문법 ( 클래스,변수,메서드 ) 
+
+
+
+
+
+
+
+
+
+    
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,181 @@
+**24day**
+- IO Review
+- Network 
+-------------------
+Network 
+:    주요 API  java.net.*
+	 TCP/IP protocol 기반 네트워크 프로그래밍 
+	 
+	 TCP ( Transmission Control protocol ) 
+	 : 전송 제어 프로토콜 
+	   데이터 전달의 신뢰성이 높은 전송 제어 규약 
+	   ( ex - 전화 시스템과 유사 ) 
+	 IP ( Internet Protocol ) 
+	 : 호스트 주소 지정 
+	   ex) 127.0.0.1 : 자신의 호스트(컴퓨터) IP 
+	        192.168.0.20 : 강사 컴퓨터 IP 
+	        --> DNS 로 IP를 연결한다.
+	        		ex) www.daum.net 
+	Port : 가상의 연결단위 , 서비스 입구 
+			ex) http://127.0.0.1:80       
+	            protocol    ip        port 
+	 
+	Socket : 컴퓨터 통신 접점에 위치한 통신 객체 
+			   소켓은 출력스트림과 입력스트림을 가지고 있다 
+			   ex) 전화기와 같은 역할을 한다 
+			   
+	ServerSocket : Port를 설정하고 
+					  클라이언트 접속시에 
+					  클라이언트 연결 정보를 가진 개별 소켓을
+					  반환하는 역할을 한다. 
+					  ex) 대표전화의 역할 
+			   
+    step1 		클라이언트가 서버에 접속하면 서버는 클라이언트에게
+    			데이터를 전송하고 클라이언트는 그 데이터를 입력받는다 
+    			Client							Server  		
+    											ServerSocket(port)
+    			Socket(ip,port)			
+    											accept() 					
+    											Socket 
+	 			input			<=========  output 
+	 			close							 close 
+	 
+	 step2 
+	 			서버는 클라이언트 접속을 대기 ( ServerSocket 의 accept() ) 
+	 			클라이언트는 서버에 접속하여 ( Socket(ip,port) 생성 ) 
+	 			서버에 메세지를 출력하고 종료한다 
+	 			서버는 클라이언트가 보낸 메세지를 읽어 자신의 콘솔에
+	 			출력하고 연결을 종료한다. (close()) 
+	 			그리고 다시 다른 클라이언트 접속을 기다린다 ( accept() ) 
+	 			
+	 			Client							Server
+	 											ServerSocket(port)
+	 											accept() : Socket 
+	 			Socket(ip,port)			    Socket 
+	 			socket.getOutputStream()==>socket.getInputStream()
+	 			close()							close() 
+	 
+	 
+	 step3 EchoServer 와 EchoClient 구현하기 
+	 		
+	 		EchoClient는 EchoServer에 접속하여 
+	 		지속적으로 
+	 		콘솔로부터 데이터를 입력받아 
+	 		데이터를 출력하고 
+	 		EchoServer가 출력한 데이터를 입력받아 콘솔에 출력한다 
+	 		
+	 		EchoServer는 EchoClient와 1대1 관계를 유지하면서 
+	 		(지속적인 통신을 위해서는 클라이언트 1명만 서비스 할 수 있음)
+	 		지속적으로 
+	 		EchoClient가 출력한 메세지를 입력받아 
+	 		자신의 콘솔에 출력하고 다시 그 메세지를 
+	 		EchoClient로 출력한다. 
+	 		
+	 		EchoClient							EchoServer
+	 		             -------------->
+	 		             <--------------
+	 
+---에코클라이언트 프로그램 구성 
+	Socket(ip,port)
+	System.in<InputStreamReader<BufferedReader:콘솔로부터 입력받는 스트림 
+	socket.getOutputStream<PrintWriter(autoflush) : 서버로 출력하는 스트림
+	while(true) : 지속적 대화
+		콘솔에서 읽어서
+		서버로 출력한 후 
+		다시 서버가 출력한 정보를 입력받는다. 
+	close() 
+-- 에코서버 프로그램 구성 
+	ServerSocket(port)
+	accept() : Socket --> 1 대 1 통신이므로 한번만 실행 
+	socket.getInputStream() < InputStreamReader < BufferedReader 
+	socket.getOutputStream() < PrintWriter(autoflush) 
+	while(true) : 클라이언트와 지속적인 메아리 서비스를 해야 하므로
+	클라이언트가 보낸 메세지를 입력받고
+	다시 클라이언트로 그 메세지를 출력한다.  
+	
+	 step4 MultiServer 
+	 client 는 step3과 동일하다 
+	 
+	 다수의 클라이언트가 접속을 유지하면서 
+	 메아리 서비스를 받을 수 있도록 MultiServer를 구성한다. 
+	 
+	 다수의 클라이언트와 지속적 통신을 하기 위해
+	 서버측에서는 스레드가 필요하다 
+	 스레드는 클라이언트 연결 정보를 가지고 있는 일반 소켓을 
+	 MultiServer 로부터 할당받아 실제 개별 클라이언트와 통신을 
+	 담당한다 
+	 
+	 MultiServer 는 클라이언트 접속을 대기하다가 
+	 접속되면 일반소켓을 반환받아 
+	 스레드 생성시에 소켓을 할당하는 일을 한다. 
+	 
+	 ex)    public class MultiServer{
+	 			public void go(){}
+	 			main(){}
+	 			class ServerWorker implements Runnable{}	 	     
+	 	     }
+	 
+	MultiServer 구성  
+	ServerSocket
+	while(true)
+	accept() : 대기하다 클라이언트 접속하면 일반소켓반환
+	Runnable interface 타입의 ServerWorker
+	객체 생성시 일반소켓을 할당한 후 
+	스레드 생성하여 start 시킨다. 
+
+client1  socket<----->socket<ServerWorker:
+									실제 클라이언트와 통신은 run()에서 
+client2  socket<----->socket<ServerWorker
+client3  socket<----->socket<ServerWorker 
+	 
+	 step5 채팅 서버와 채팅 클라이언트 구현 
+	 채팅 클라이언트 
+	 : 클라이언트가 서버에 보낼 메세지를 콘솔에서 입력받아 
+	   서버로 출력한다 ( 서버로 메세지 출력 ) 
+	   서버에서 전송된 메세지를 입력받아 콘솔에 출력한다 
+	   (서버에서 메세지 입력)
+	 채팅 서버 
+	 : 다수의 클라이언트와 지속적으로 통신한다 
+	   클라이언트의 메세지를 입력받아 접속한 전체 클라이언트에게 
+	   전송한다 
+	   클라이언트 입장과 퇴장 메세지를 서버상에서 출력하고
+	   모든 클라이언트에게 공지한다 
+	   
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 

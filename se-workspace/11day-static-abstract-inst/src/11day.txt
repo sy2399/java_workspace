@@ -1,0 +1,73 @@
+**11일차 주요목차**
+-final
+-static
+-abstract
+------------------------------
+final :  상수 or 오버라이딩 방지 or subclassing 방지(상속불가)
+ex)  final String MY_PASSWORD="JAVAKING";
+	  //위는 재할당 불가능한 상수가 된다 
+
+static :  static 변수(or 상수)
+		  static 메서드 
+		  static 초기화 
+		  
+ static 정적 <---> 동적 object 
+ 
+ static 변수는 class 변수로도 불린다 ( class attribute ) 
+ static 으로 선언되면 class loading시 단 한번 메모리에 적재된다 
+ static 변수는 별도의 객체 생성 없이 메모리에 적재된다 
+ 
+ java memory 는 
+ stack 영역 , heap 영역 , method area 영역으로 구성
+ method area 영역 (class area영역) :  static 정보 저장 
+ 							                     method 정보 저장 
+ stack 영역 :  local variable 정보 저장 
+ heap 영역 :  instance variable 정보 저장 							                    
+
+java 프로그램(.java)이 컴파일 후 (.class) 
+실행 단계 
+:  class loading -- 코드검증 -- 실행(runtime)
+  (static 적재 ) 						 main ----> 객체 생성 .. 
+
+**static 특징**
+-별도의 객체 생성 없이 클래스명.변수 or 메서드로 사용가능
+- static              non-static 
+		 <-----------
+		   직접 접근 가능 
+		  ------------->	
+           직접 접근 불가 ( 접근위해서는 객체 생성 필요 ) 
+           
+  **abstract** 
+  추상 클래스와 추상 메서드 정의시 사용되는 자바 키워드 
+  why? 부모 클래스에서 자식 클래스에게 구현을 강제함으로써 
+  		  표준화에 기여한다 
+  특징 :  abstract class는 직접 객체화 될 수 없다 
+  			( new Person() --> error ) 
+  		   abstract method는 자식(하위) 클래스에서 
+  		   반드시 구현해야 한다 
+  		   결론적으로 abstract class는 자식에게 
+  		   멤버를 물려주고 기능구현을 강제하는 역할을 주로 한다 
+  		   
+  	Template Method Design Pattern 
+  	-> Design Pattern 설계 패턴 
+  	: 부모 클래스(추상)에서 업무의 흐름(틀,알고리즘뼈대)을 정의하고
+  	  자식 클래스에서 업무를 구체화하는 설계패턴    	
+  					          
+  **12일차 주요목차**
+  Interface 개념 , 특징          
+           
+           
+           
+           
+           
+
+
+
+
+
+
+
+
+
+
+
