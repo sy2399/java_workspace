@@ -79,7 +79,7 @@ JDBC, Database
 
 ## Ajax & jQuery (ajax-workspace, jquery-workspace)
 
-## Framework (framework-workspace 1 & 2, web-workspace)
+## Framework (framework-workspace 1 & 2)
 - IOC (DI, DL)
 - AOP
 - Spring MVC
