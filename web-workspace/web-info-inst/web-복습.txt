@@ -1,0 +1,23 @@
+**review**
+1. Http 
+2. HTML, JavaScript, CSS
+3. Servlet, JSP 각각 정의
+   Servlet과 JSP 의 역할, 차이
+4. get방식, post방식
+5. WAS , Web Container
+6. DD(Deployment Descriptor) - web.xml 의 역할
+7. Servlet LifeCycle
+   Jsp LifeCycle
+8. Servlet 계층구조 
+	(Servlet - GenericServlet - HttpServlet)
+  interface		 abstract		 abstract
+   위와 같이 설계한 이유는?
+9. ServletConfig 와 ServletContext 의 역할 비교 설명
+10. Model1과 Model2 비교 설명
+11. Model2 -> MVC 각각 역할
+12. Singleton Pattern
+    static 역할
+    	-> instance 변수, local 변수 , static(class) 변수 각각 역할
+13. Front Controller Pattern
+14. 컨트롤러 영역
+	Handler Mapping 역할

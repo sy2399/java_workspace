@@ -1,0 +1,63 @@
+********* tomcat WAS 설정 및 Eclipse 연동 설정*****************
+1.http://tomcat.apache.org/
+ 톰켓 zip 파일 다운 받는다.
+2.C:\java-kosta\servers\web-tomcat\conf 의  server.xml 의 설정을 변경
+  server.xml port 와 한글처리를 다음과 같이 변경한다.
+  69 Line - port="8080" 을 "8888" 로 변경 (port 변경-오라클서버도 8080 이용)
+   - URIEncoding="utf-8" 추가 (한글처리)
+  <Connector port="8888" URIEncoding="utf-8" protocol="HTTP/1.1" 
+           connectionTimeout="20000" 
+           redirectPort="8443" />
+ 
+3. C:\tomcat\conf\context.xml 에서 자동 리로딩 설정 - 코드 변경시 서버 자동 리로딩!!
+   19 Line
+   <Context reloadable="true">으로 변경
+
+4. 
+Eclipse 에서 web 개발 설정하기
+
+1) 기본 에디터 설정 
+File - Switch workspace - other 에서 C:\eclipse\workspace\web
+로 workspace를 다시 생성한다.
+다시 실행되면 font 설정 및 jdk 설정을 한다.
+window - preference - General - Appearance - Colors and font - basic
+줄번호
+window - preference - Editors - Text Editors 의 show line number
+jdk 확인
+window - preference - java - installed JREs - JDK1.x 확인
+window - preference - java - installed JREs - Execution Environment - jdk1.x 확인
+2) 한글 인코딩 변경 (MS949에서 utf-8로 변경 설정)
+windows-preferences-general-workspace 에서 Text file encoding 에서 other 선택후 utf-8 로 setting 
+windows-preferences-general-editors-Text Editors-Spelling
+windows-preferences-general-content types에서 css,html,java properties file,java source file,jsp를 utf-8로 설정
+windows-preferences-web-jsp,css,html 을 utf-8로 설정  
+
+3) WAS(tomcat) 설정
+java EE perspective 로 이동 - 아래 server tab 선택 - 오른쪽 마우스 클릭
+new - server 선택 - Apache - tomcat 선택
+tomcat installation directory - C:\tomcat
+JRE - jdk1.* - 완료 후
+Server 탭에서 생성된 tomcat을 더블클릭
+Server Locations 에서 
+두번째 tomcat installation 클릭
+deploy path 를 C:\tomcat\webapps 로설정 후 저장
+Server 탭에서 서버를 클릭후 오른쪽 마우스를 이용해 server start 
+메뉴 bar 에서 지구그림을 클릭(웹화면) 실행
+
+
+
+
+
+
+
+
+
+cf) Apache & Apache Tomcat의 차이
+--> Apache  		: html서비스만
+--> Apache Tomcat	: + 서버(웹컨테이너 기능)
+
+cf) Servlet이 있는데, JSP가 생긴 이유?
+--> Servlet로 html 화면상에 보여주려면 코딩이 불편 
+	--> 그래서 JSP(Java Server Page) client에게 보여주기 위한 page를 만들기에 최적화된
+
+ 

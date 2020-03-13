@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript checkbox</title>
+<script type="text/javascript">
+	function selectAll(){
+		var allComp=document.menuForm.allCheck;
+		var m=document.menuForm.menu;
+		for(var i=0;i<m.length;i++){
+			m[i].checked=allComp.checked;
+		}
+	}
+</script>
+</head>
+<body>
+<form name="menuForm">
+<input type="checkbox" name="allCheck" onclick="selectAll()">전체선택<br>
+<input type="checkbox" name="menu" value="피자">피자<br>
+<input type="checkbox" name="menu" value="치킨">치킨<br>
+<input type="checkbox" name="menu" value="꽃등심">꽃등심<br>
+<input type="checkbox" name="menu" value="광어">광어<br>
+<input type="checkbox" name="menu" value="스테이크">스테이크<br>
+</form>
+</body>
+</html>
+
+
+

@@ -1,0 +1,45 @@
+**model1 Architecture**
+
+기존 구조
+html <---> Servlet(or JSP) <---> Database
+
+----------------------------------------------
+*Model1
+html <---> Servlet(or JSP) <---> java beans(객체들 or 컴포넌트) <---> Database
+
+	- java beans : business logic을 담당하여 재사용성&유지보수성을 높이는 구조
+	ex) DAO
+	-> Servlet or JSP 역할 분담
+----------------------------------------------	
+**Singleton Design Pattern**
+시스템 상에서 단 하나의 객체만 필요한 경우에 하나의 객체를 공유해서 적용하는 디자인 패턴
+- 적용방법 : 생성자에 private 접근제거자를 명시하여
+			외부에서 객체 생성할 수 없도록 처리
+			
+			static변수는 클래스 로딩시에 단 한번 메모리에 적재되므로
+			그 속성을 이용해 자신의 class 에서 자신의 객체를 만든 후 
+			static변수에 reference저장
+			
+			외부에 공유하는 방법은 static 메서드로 
+			한번 생성한 객체의 reference 를 반환하는 구조로 처리
+
+ex) 현재 MemberDAO 객체는 하나만 존재하면
+	각 Servlet에서는 공유해서 사용하면 된다
+	즉, 불필요하게 사용할 때마다 매번 MemberDAO 객체를 만들 필요가 없다는 의미
+	
+	MemberDAO dao = new MemberDAO();//dao를 매번 만드는 것은 효율적이지 않다 
+		//---> 해결방안 : Singleton design pattern
+		/*
+		 * 하나 만들어서 공유
+		 * 단, 아무나 만들지 못하게 생성자를 private 로
+		 * 대신 getInstance()메서드로 접근 가능하게
+		 */
+
+		 
+----------------------------------------------	
+
+**주요개념**
+ServletConfig, ServletContext 의 특징, 용도
+ServletContextListener 의 특징, 용도 		 
+model1 설계방식을 적용했을 때의 장점
+Singleton Design Pattern

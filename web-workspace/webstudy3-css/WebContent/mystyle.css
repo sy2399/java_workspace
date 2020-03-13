@@ -1,0 +1,51 @@
+	body{
+		
+		font-size: medium;
+	}
+	li{
+		color:orange;
+	}
+	/* 
+	class 선택자를 이용해 스타일 부여 
+	class를 선택할 때는 .클래스명으로	
+	*/
+	.test{
+		color:lime;
+	}
+	
+	/*
+	id 선택자를 이용해 스타일 부여
+	#id명
+	*/
+	
+	#test2{
+		color :aqua;
+	}
+	
+	
+	table {
+		border-collapse: collapse;
+	}
+	
+	table, th, td{
+		border :1px solid black;
+	
+	}
+	td,th{
+		padding: 15px;
+	}
+	/*Link : 한번도 클릭하지 않은 링크 속성*/
+	a:LINK {
+		color :  #ffffff;
+		text-decoration: none;
+	}
+	/*HOVER : 마우스 오버시 색상 변경*/
+	a:HOVER{
+		color: red;
+		text-decoration: none;
+	}
+
+	a:VISITED{
+		color : #660000;
+		text-decoration: none;
+	}

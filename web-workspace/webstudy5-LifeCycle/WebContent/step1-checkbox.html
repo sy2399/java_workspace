@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step1-checkbox</title>
+<script type="text/javascript">
+	function checkForm(){
+		var fa=document.menuForm.food;
+		var flag=false;
+		for(var i=0;i<fa.length;i++){
+			if(fa[i].checked){
+				flag=true;
+				break;
+			}
+		}
+		if(flag==false){
+			alert("메뉴를 선택하세요");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<h2>점심메뉴</h2>
+<form method="post" action="MenuServlet" name="menuForm" 
+onsubmit="return checkForm()">
+<ul>
+	<li>돈까스<input type="checkbox" name="food" value="돈까스"></li>
+	<li>시래기국<input type="checkbox" name="food" value="시래기국"></li>
+	<li>육회비빔밥<input type="checkbox" name="food" value="육회비빔밥"></li>
+</ul>
+&nbsp;&nbsp;&nbsp;<input type="submit" value="주문"> 
+</form>
+<!--   1. javascript로 메뉴항목을 하나 이상 선택하지 않을 경우
+			메뉴를 선택하세요 alert 후 전송x 
+		2. MenuServlet 에서는 
+		   사용자가 체크한 메뉴항목에 대하여 다음과 같이 
+		   보여준다 
+		   
+		   돈까스 육회비빔밥 주문하셨습니다 
+ -->
+</body>
+</html>
+
+
+
+
+
+
+

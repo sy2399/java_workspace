@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step15-submit</title>
+<script type="text/javascript">
+	function checkForm(){
+		var tf=document.testForm;
+		if(tf.memberId.value==""){
+			alert("아이디를 입력하세요");
+			return false;
+		}
+		if(tf.memberPass.value==""){
+			alert("패스워드를 입력하세요");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<!-- action:서버프로그램url , method:전송방식 , name:제어용도  -->
+<!-- submit에 이벤트 처리 위해 
+	onsubmit="return checkForm()" 
+	만약 checkForm() 함수가 false를 리턴하면 전송되지 않는다 
+-->
+<form action="test.jsp" name="testForm" method="post" 
+onsubmit="return checkForm()">
+	아이디<input type="text" name="memberId"><br>
+	패스워드 <input type="password" name="memberPass"><br>
+	<input type="submit" value="전송">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript radio</title>
+<script type="text/javascript">
+	function checkRadio(){
+		//동일한 name으로 명시되면 배열로 인식 
+		//alert(document.radioForm.star.length);
+		/* alert(document.radioForm.star.value);
+		document.radioForm.reset(); */
+		var rf=document.radioForm.star;
+		if(rf.value==""){
+			alert("이름을 선택하세요!");
+		}else{
+			alert(rf.value+" 찜!");
+		}
+		document.radioForm.reset();
+	}
+</script>
+</head>
+<body>
+<!-- 라디오 선택하지 않고 버튼 누르면 
+      이름을 선택하세요
+	  선택하고 버튼누르면 
+	  공유 찜! 
+	  
+	  초기화 
+ -->
+<form name="radioForm">
+<input type="radio" name="star" value="김문일">김문일 <br>
+<input type="radio" name="star" value="박보검">박보검 <br>
+<input type="radio" name="star" value="공유">공유 <br>
+<input type="button" value="선택" onclick="checkRadio()">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+

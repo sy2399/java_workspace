@@ -1,0 +1,156 @@
+  **참고**
+  webstudy5 웹프로젝트는 web module version 2.5 로 생성했다 
+  이는 Servlet 생성시 xml 기반 설정이 자동으로 생성된다. 
+  ( 3.0 이상부터는 Servlet 생성시 Annotation 기반 설정으로 자동생성)
+  
+  **오늘 주요 목차**
+  - request.getParameterValues() 
+  - Servlet LifeCycle 
+  - ServletConfig
+  - ServletContext  
+  
+  -------------------------------------------------------------------
+  1.Servlet LifeCycle
+  	
+  	아래의 Servlet LifeCycle 메서드는 웹컨테이너에 의해 호출
+  	
+  	init(ServletConfig) --> service(request,response) --> destroy()
+  	
+  	constructor : 객체초기화				-> 1번
+  	init(ServletConfig)	: 서블릿초기화			-> 1번
+  	service(request,response): 클라이언트에게 서비스	-> client 요청 수에 비례(새로고침할 때마다)
+  	->스레드
+  	destroy(): Servlet이 서버에서 해제되기 직전에 호출됨	-> 1번                                                 
+  	
+  							WAS(Web Container)
+  	client --request-->	is loaded?	--no-->class loading
+  		|					|					|
+  		|					|				서블릿 객체생성- constructor
+  		|					|					|
+  		|					yes				init(ServletConfig)
+  		|					|					|
+  		|					----------->	service(request,response) - doGet() of doPost()
+  		|										|
+  		|<-----------------	response <----------- 	
+  								
+  											destroy()
+  											
+  	cf) 생성자와 init의 차이?
+  		"그사람이 나의 이름을 불러주기 전까지 나는 아무것도 아니엇따!"
+  		"그사람이 나의 이름을 불러주었을 떄 비로소!!"
+  		생성자 - 아직 서블릿이 아닌 그냥 일반 객체(아직 직원이 아닌 일반 사람)
+  		init - ServletConfig를 Container로부터 넘겨받음으로써 드디어 Servlet이 됨(직원이 됨)
+  			
+  	cf) service()를 call하는 건 thread
+  	
+   ------------------------------------------------------------------
+   																	
+  **ServletConfig** 블로그
+  Servlet 객체가 웹프로그램으로 일하는 데 필요한 정보를 가지고 있는 객체
+  Servlet 객체당 하나의 ServletConfig
+  
+  Web Container에 의해 각 Servlet의 init(ServletConfig) 메서드 호출될 때
+  주입된다
+  
+  ServletConfig 는 웹 컨테이너에 의해 전달받는 
+  Servlet Configuration Object 개별 서블릿 설정 정보 객체이다
+  
+  주로 사용되는 용도는 
+  Spring Framework의 web application 환경 설정시
+  Spring Framework 설정 파일 정보를 특정 Servlet(Dispatcher Servlet)
+  에게 전달할 때 활용된다
+  &
+  웹 어플리케이션 내에 모든 서블릿과 jsp가 공유할 수 있는
+  객체인 ServletContext를 활용하기 위해서는 반드시
+  ServletConfig객체가 필요하다
+  
+ 예) spring framework 에서 ServletConfig 활용 사례 
+  <servlet>
+        <servlet-name>AppServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        
+         <!-- ServletConfig 초기파라미터를 설정하여
+         	   DispatcherServlet의 init 호출시 전달되도록 설정한다
+         	   자신이 설정한 spring 설정파일정보를 
+         	   DispatcherServlet에 전달한다 
+         	   
+         	   Config는 서버에서 하지 못하는 데이터 저장을 위한 저장소
+          -->
+          
+          <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>application-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet> 		
+  
+  ex)
+  client가 LoginServlet에 100명이 접속해서 로그인 서비스를 제공받은 경우
+  ->	LoginServlet객체 1개
+  		LoginServlet의 ServletConfig 1개
+  		LoginServlet의 init 1번
+  		LoginServlet 의 service() 100번
+  		LoginServlet의 thread 100개
+  		LoginServlet의 destroy() 죽기전에 1번
+  		ServletContest 는 몇개 ?(웹어플리케이션 당)	1개
+  -->첫번째 client만 constructor, init과정을 거치는 건 비합리적이지 않나? 
+  --> web.xml에서 해결
+  --> <load-on-startup>1</load-on-startup>
+  --> webapp이 start될 때 load
+  ------------------------------------------------------------------
+   
+  **ServletContext* 카페
+  ServletContainer 와 소통하기 위한 메서드 선언
+  
+  Web application 당 하나 생성
+  Web application 시작 시점에 Web Container 가 ServletContext객체를 생성
+  Web application 전역에서 필요한 환경정보를 저장
+  
+  모든 Servlet과 JSP는 ServletContext에 접근 가능하고
+  필요시 정보를 할당 및 반환받을 수도 있다.
+  
+  각 Servlet 과 JSP는 자신의 ServletConfig 객체가 할당되어 있어서
+  ServletContext를 접근해 사용할 수 있다
+  ------------------------------------------------------------------
+  
+  Servlet Interface			ServletConfig Interface
+	\ (getServletConfig)		|	(getParameter)
+  	 \	(init, service, destroy)|	(getServletContext)
+  	  \							|
+  	  	GenericServlet abstract Class
+  	  				|
+  	  		HttpServlet Class
+  	  				| (doGet , doPost)
+  	  			MyServlet1
+  	  			ex ) request.getServletConfig().getParameter()
+  	  				 request.getServletCOnfig().getServletContext()
+  	  				 -->위의 두 코드에서 getServletConfig()를 생략해도댐
+  	  				 	-->굳이 Servlet,ServletConfig 두개의 인터페이스를 implements한 이유는 편리성을 위해서
+  ------------------------------------------------------------------
+  
+  **주요개념**
+  Servlet LifeCycle 전체 흐름
+  Servlet Interface의 LifeCycle 메서드 init() service() destroy() 역할
+  ServletConfig
+  ServletContext
+  Web Container의 역할
+  
+  ------------------------------------------------------------------
+  
+  2/22 주요 목차
+  ServletContext
+  ServletContextListner
+  Servlet 과 Database 연동
+  
+  
+  
+  
+  
+  
+   
+  
+  
+  
+  
+  
+  

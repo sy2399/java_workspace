@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>servlet 첫번째 테스트</title>
+</head>
+<body>
+<!-- method : 전송방식 
+				  get 과 post 
+	action : 요청할 서버프로그램 url 
+	
+	get방식 요청일때 url 형태 
+	http://localhost:8888/webstudy4-servlet/FirstServlet?userName=%EC%95%84%EC%9D%B4%EC%9C%A0
+	protocol ip(domain) port  webapp name    서버프로그램url  ? name=value
+ -->
+<form method="get" action="FirstServlet">	
+	이름 <input type="text" name="userName">
+	<input type="submit" value="get방식전송">
+</form>
+<!-- a tag가 제공하는 링크는 get방식 요청이다  -->
+<a href="FirstServlet?userName=아이유">FirstServlet으로 이동</a>
+<br><br>
+<!-- HTTP Status 405 - HTTP method POST is not supported by this URL -->
+<!-- post방식을 처리할 FirstServlet의 doPost 메서드를 구현해야 한다 -->
+<form method="post" action="FirstServlet">	
+    이름 <input type="text" name="userName" >
+	<input type="submit" value="post방식전송">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

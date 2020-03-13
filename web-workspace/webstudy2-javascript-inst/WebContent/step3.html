@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript 내장함수테스트</title>
+<script type="text/javascript">
+	function enterHome(){
+		// confirm 함수는 확인 누르면 true , 취소누르면 false를 반환
+		var result=confirm("당신은 성인이세요?");
+		if(result){
+			alert("입장합니다~~");
+			location.href="http://www.pororopark.com";
+		}else
+			alert("나이 더 먹고 오세요");
+	}
+</script>
+</head>
+<body>
+<input type="button" value="성인사이트입장" onclick="enterHome()">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

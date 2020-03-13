@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dom div 제어</title>
+<script type="text/javascript">
+	function showImg(){
+		document.getElementById("imgView").innerHTML=
+			"<img src='간디.jpg'>";
+	}
+	function hideImg(){
+		document.getElementById("imgView").innerHTML="";
+	}
+</script>
+</head>
+<body>
+<div id="imgView"></div>
+<input type="button" value="보기" onclick="showImg()">
+<input type="button" value="감추기" onclick="hideImg()">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

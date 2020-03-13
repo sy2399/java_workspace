@@ -1,0 +1,6 @@
+**webstudy25**
+jsp forward action tag를 이용해
+프로젝트시작시 welcome file 즉 index.jsp
+화면 대신 list page가 제공되도록 변경
+
+Prod(database connection pool)을 이용하도록 변경

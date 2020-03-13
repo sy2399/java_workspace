@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step5-layout.html</title>
+<style type="text/css">
+	.container{
+		width: 100%;
+		border: 1px solid black;
+		margin-left: auto;
+		margin-right: auto;	/*좌우여백을 동일하게 하여 중앙정렬*/
+		
+	}
+	.header{
+		padding: 5px;
+		height: 70px;
+		border-bottom:1px solid black;
+	}
+	.left{
+		padding:5px;
+		height:500px;
+		width:20%;
+		float:left;	
+	}
+	.main{
+		padding:10px;
+		height:500px;
+		border-left: 1px solid black;
+		float: left;
+		
+	}
+	.footer{
+		padding:5px;
+		height:70px;
+		border-top: 1px solid black;
+		clear: both;
+		/*	float 속성 요소 아래 배치하기 위해
+			float 속성 초기화시킨다		
+		*/
+	}
+	.header,.footer{
+		text-align: center;
+	}
+	
+	table {
+		border-collapse: collapse;
+	}
+	
+	table, th, td{
+		border :1px solid black;
+	
+	}
+	td,th{
+		padding: 15px;
+	}
+	.listTable{
+		margin-left:500px;/*table과  main div와 여백을 주겟다*/
+		margin-top:20px;
+	}
+	.loginTable{
+		margin:auto;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div class = "container">
+		<div class = "header"><!-- jsp: include header.jsp -->Model2 상품관리</div>
+		<div class = "left">
+		<form  method = "post">
+			<table class = "loginTable">
+				<tr>
+					<td>아이디</td>
+					<td><input type = "text" name = "id" size="10"></td>
+				</tr>
+				
+				<tr>
+					<td>비밀번호</td>
+					<td><input type = "password" name = "id" size="10"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="right"><input type = "submit" value ="로그인"></td>
+				</tr>
+			</table>
+		</form>
+		</div>
+		<div class = "main">
+			<table class = "listTable">
+				<tr>
+					<th>NO</th><th>NAME</th><th>MAKER</th>
+				</tr>
+			</table>
+		</div>
+		<div class = "footer">footer</div>
+	</div>
+</body>
+</html>

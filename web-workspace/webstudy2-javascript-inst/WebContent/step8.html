@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript 문자열</title>
+<script type="text/javascript">
+	function testStr(){
+		//alert("문자열 테스트");
+		var name1="아이유";
+		//alert(name1.length);//문자열길이
+		var name2="아이고";
+		//alert(name1==name2);//문자열비교
+		var name3="간디부반장님";
+		//alert(name3.substring(1,4));
+		var age1=25;
+		var age2="25";
+		//alert(age1==age2);
+		// 데이터와 타입까지 비교 
+		//alert(age1===age2);
+		var age3=parseInt(age2); // 정수로 변환 
+		//alert(age1===age3);// true 
+		var clientData=" 문일 ";
+		alert(clientData.length);
+		alert(clientData==="문일");
+		alert(clientData.trim()==="문일");//공란제거 
+	}
+</script>
+</head>
+<body>
+<input type="button" value="문자열테스트" onclick="testStr()">
+</body>
+</html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+**jsp 기본**
+
+Servlet	:	Web application 을 위한 자바 기술
+			자바 클래스 내에서 HTML을 명시하여 client에게 응답
+			-> web page를 생성하기에는 생산성이 낮다
+			
+JSP (Java Server Page )	:	동적으로 웹페이지를 생성하기 위한 기술
+							HTML에서 자바 코드를 기술
+							-> 생산성있게 web page 구현
+
+이후에 Model2 Architecture에서는 
+	- Servlet 은 Controller 역할
+	- JSP 는 View 역할을 담당
+------------------------------------------------------------------------	
+ - JSP 기본문법
+ 	- 주석 : <%-- --%>		/ cf) html,xml 주석 : <!-- -->
+ 	- 스트립틀릿 scriptlet	
+ 		<% java code %>	:	service method 내에 삽입되는 자바 코드
+ 							->이 안에서 변수 선언하면 지역변수가 된다
+ 	- 지시자 directive
+ 		<%@	%>	:	jsp 상단에 위치, 웹 컨테이너에게 현 JSP 의 메타 정보 제공
+ 					ex) 한글 인코딩, import, session 처리, errorPage 처리
+ 	
+ 	- 표현(출력) expression
+ 		<%= 출력내용 %>	:	out.println(출력내용) 으로 변환되는 코드
+ 	
+ 	- 선언 declaration
+ 		<%!	%>	:	멤버 변수 or 메서드를 정의할 때 사용
+ 	
+------------------------------------------------------------------------											
+ - JSP LifeCycle
+	-	jsp에서 java class(Servlet으로 변환된)를 생성하고 컴파일하는 과정이
+		추가되고 나머지는 Servlet LifeCycle과 동일하다			
+		
+									WAS(Web Container)
+	client(browser) --request --> is loaded? --no-->  .jsp
+										| 				|
+										|			  .java	
+										|				|
+										|			  .class
+										|				|
+										|			class loading		
+										|				|
+										|			 객체 생성
+										|				|
+										yes			init(ServletConfig)
+										\				|
+		client		<--------response---------   	service(req,res)
+														
+													destroy()				
+														
+														
+														

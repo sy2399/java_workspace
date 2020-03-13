@@ -1,0 +1,86 @@
+**Model2 Architecture**
+Model2 구조는 MVC Pattern을 근간으로 한다 
+
+Model : Business 와 Data Access Logic 을 처리( Java beans 가 담당 ) 
+		 (ex- Service , DAO , VO , DTO 등 ) 
+View : 화면을 담당 ( JSP ) 
+
+Controller : 제어를 담당 ( Servlet ) 
+			 클라이언트의 요청을 분석하여 Model 과 연동하고 
+			 결과제공을 위해 적절한 View(JSP) 선택, 이동시킨다. 
+
+**이동방식2가지**
+Controller는 요청에 대한 응답을 위해 View(JSP)를 지정하여 
+이동시켜야 한다. 이 때 이동방식은 forward 방식과 redirect 방식이 있다
+
+	Forward 방식 : 웹컨테이너 상에서 이동 , 클라이언트는 알아차리지 못한다
+				   기존 request와 response가 유지된다
+				   request.setAttribute(name,value) 를 이용해 정보를 
+				   공유한다 ( View(JSP) 가 이 정보를 이용해 응답한다 ) 
+				   url 변경되지 않는다  
+				   주로 정보 조회시 사용된다 (select) 
+				   새로고침시 기존의 요청이 반복될 수 있다 
+ex)
+   request.getRequestDispatcher(request,response).forward("find_ok.jsp");
+
+	redirect 방식 : 클라이언트에게 응답시 이동을 명령하는 방식 
+				   즉 클라이언트 브라우저가 해당 url로 이동하므로
+				   url 변경된다. 
+				   기존 request와 response가 유지되지 않는다 
+				   주로 정보 등록 및 수정시 사용된다 
+				   
+ex)
+	response.sendRedirect("find_ok.jsp");
+
+**********************************************************************************
+
+Model2( webstudy17 )
+			 					Controller
+index.jsp	--	find.jsp	--	FindServlet
+
+				insert.jsp	--	InsertServlet
+				
+				findbyAddress.jsp	--	FindByAddressServlet
+				
+Controller 영역의 컨트롤러 서블릿의 수가 많아지고
+일관성있는 정책 저용에 한계가 있다
+
+-------------------------------------------------------------------
+	
+Model2(MVC Pattern + FrontController Pattern 적용)
+- Front	Controller Pattern
+	:	여러 client의 다양한 요청을 하나의 진입점으로 모아
+	 	처리하기 위한 패턴( ex - 호텔의 프론트, 은행의 콜센터 )
+		-> 생산성 : 중복되는 작업을 한 곳(Front Controller)에서 처리 
+		-> 유지보수성 : 중복되는 작업을 한 곳에서 처리하기 때문에 이후 변경되는 요소를 한 곳(Front Controller)에서만 변경하면 된다.
+		
+Front Controller Pattern 적용후 모든 클라이언트의 요청을
+DispatcherServlet( Front Controller ) 가 처리
+	
+			 						Controller						
+index.jsp	--	find.jsp	--	DispatcherServlet
+
+			--	insert.jsp	--	DispatcherServlet
+				
+			--	findbyAddress.jsp	--	DispatcherServlet
+		
+	  
+
+			
+
+
+
+
+
+
+
+
+			  		 
+			  		 
+			  		 
+			  		 
+			  		 
+			  		 
+			  		 
+			  		 
+			  		 

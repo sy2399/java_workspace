@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Servlet form 연동</title>
+<script type="text/javascript">
+	function checkForm(){
+		if(isNaN(document.EnterForm.userAge.value)){
+			alert("나이를 숫자로 입력하세요!");
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<form method="get" action="EnterServlet" name="EnterForm"
+onsubmit="return checkForm()">
+	이름<input type="text" name="userName" required="required"><br>
+	나이<input type="text" name="userAge" required="required"><br>
+	<input type="submit" value="입장">
+</form>
+<!-- 	1.나이에 숫자로 입력하지 않으면
+		  숫자로 입력하세요 alert  전송시키면 x 
+		2. step5.EnterServlet 
+			나이를 확인하여 19세 이상이면 
+			빨간 배경색에 
+			김문일님 19세 성인입니다. 성인사이트 입장
+			19세 미만이면 
+			노란 배경색에 
+			김문일님 18세 미성년입니다. 다음에 나이 먹고 오세요 
+ -->
+</body>
+</html>
+
+
+
+
+
+
+

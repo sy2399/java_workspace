@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step18-dom.html</title>
+<style type="text/css">
+	div{
+		background-color: orange;
+	}
+	span{
+		background-color: lime;
+	}
+</style>
+<script type="text/javascript">
+	function testDiv(){
+		var d1=document.getElementById("divOne");
+		alert(d1.innerHTML);
+		d1.innerHTML="";
+		document.getElementById("divTwo").innerHTML="";
+	}
+	function testSpan(){
+		var span1=document.getElementById("spanOne");
+		alert(span1.innerHTML);
+		span1.innerHTML="";
+	}
+</script>
+</head>
+<body>
+<input type="button" onclick="testDiv()" value="div제어">
+<input type="button" onclick="testSpan()" value="span제어">
+<!-- span제어버튼 누르면 alert으로 자신의 html 정보 출력 후
+	  내용을 사라지게 만든다 
+ -->
+<hr>
+<div id="divOne">이 영역은 DIV 부분입니다</div>
+<span id="spanOne">이 부분은 span 부분입니다</span>
+<hr>
+<div id="divTwo">이 영역은 div부분입니다</div>
+</body>
+</html>
+
+
+
+
+
+
+
