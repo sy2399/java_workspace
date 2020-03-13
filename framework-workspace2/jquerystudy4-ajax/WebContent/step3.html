@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#name").change(function(){
+			$("select option:selected").each(function() {
+			     
+			      if($(this).val() ==""){
+			    	  alert("이름을 선택하세요!");
+			    	  $("#addressView").empty();
+			    	  return;
+			      }
+			      //alert($( this ).text());
+			      $.ajax({
+					type: "post",
+					url : "AddressServlet",
+					data : "name="+$(this).text(),
+					success:function(data){
+						//alert("success" + data);
+						$("#addressView").text(data);
+					},//success
+					timeout:1000,//제약시간 1초
+					error:function(){
+						alert("timeout error")
+					}//error
+				});//ajax
+			 });
+		
+		});
+	});
+</script>
+</head>
+<body>
+	<!-- 선택된 옵션이 없으면 주소를 선택하세요!
+	  있으면 ajax방식으로 server에 이름을 넘겨 
+	  주소를 응답받아 span id addressView 영역에 출력한다. 	
+ -->
+	<select id="name">
+		<option value="">-주소검색-</option>
+		<option value="기성용">기성용</option>
+		<option value="이청용">이청용</option>
+		<option value="손흥민">손흥민</option>
+	</select>
+	<span id="addressView"></span>
+</body>
+</html>
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#ajaxBtn").click(function(){
+			//alert(1);
+			//ajax()안에
+			//{}쓴다는 거 자체는 자바스크립트 객체를 만들어서 라이브러리에 있는 jquery method에 이 정보를 전달하겠다는 의미
+			$.ajax({
+				type: "get",
+				url : "CountServlet",
+				data : "userId=java",
+				success:function(data){
+					alert("success" + data);
+				},//success
+				timeout:1000,//제약시간 1초
+				error:function(){
+					alert("timeout error")
+				}//error
+			});//ajax
+			
+		});
+	});
+</script>
+</head>
+<body>
+<input type="button" id="ajaxBtn" value="ajax연동테스트">
+</body>
+</html>
+
+
+
+
+
+
+

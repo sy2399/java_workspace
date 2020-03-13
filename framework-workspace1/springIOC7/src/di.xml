@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id = "hotel" class = "model.Hotel">
+	<property name="hotelName" value="힐튼"/>
+	<property name="cost" value="30"/>
+</bean>
+
+<bean id = "dormitory" class = "model.Dormitory">
+	<property name="schoolName" value = "판교대학교"/>
+	<property name="library">
+		<list>
+			<ref bean="book1"/>
+			<ref bean = "book2"/>
+		</list>
+	</property>
+</bean>
+
+<bean id = "book1" class = "model.Book">
+	<property name="title" value="웹2.0경제학"/>
+	<property name="writer" value="김국현"/>
+</bean>
+<bean id = "book2" class = "model.Book">
+	<property name="title" value="새로운미래가온다"/>
+	<property name="writer" value="다니엘핑크"/>
+</bean>
+
+
+<bean id = "house" class = "model.House">
+	<constructor-arg value="판교자이"/>
+	<constructor-arg>
+		<map>
+			<entry key = "tv" value-ref="tv"/>
+			<entry key = "washing" value-ref="washing"/>
+		</map>
+	</constructor-arg>
+		
+</bean>
+
+<bean id = "tv" class = "model.HomeAppliance">
+	<property name="maker" value="삼성"/>
+	<property name="productName" value="파브"/>
+</bean>
+
+<bean id = "washing" class = "model.HomeAppliance">
+	<property name="maker" value="LG"/>
+	<property name="productName" value="세탁기"/>
+</bean>
+
+
+</beans>

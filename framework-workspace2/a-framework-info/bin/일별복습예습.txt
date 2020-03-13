@@ -1,0 +1,134 @@
+***4/17***
+
+- springIOC5 분석
+
+- IOC 개념
+
+- DL / DI 개념 	
+
+======================================================================================================================
+		    
+***4/18***
+
+Interface란
+: 다양한 계층구조를 형성케 해준다
+cf) Polymorphism : 다형성  
+				   "One Interface , Multiple implements"
+				    
+cf) Encapsulation :  인터페이스는 공개하고 구현부는 감춘다 
+					 "public interface , private implementation" 
+
+Interface를 적용한 사례
+- jdbc interface	: oracle....등에 상관없이 돌아간다
+- Servlet interface : Tomcat...등에 상관없이
+- dataSource interface
+- Iterator
+
+응집도와 결합도
+- 응집도 : 자신의 역할에 집중하는 정도
+- 결합도 : 객체 지향은 객체와 객체가 서로 상호관계를 이루는 것인데, 이때 객체와 객체간 상호관계가 서로 영향이 없게 해야 하는 것.
+
+
+======================================================================================================================
+AOP란?
+	:절차지향 프로그래밍 → 
+	객체지향 프로그래밍 (OOP) : 유지보수성과 확장성 &
+	관점지향 프로그래밍 (AOP) : 객체지향적인 프로그래밍을 지향하면서 유지보수를 좀 더 편리하게 하기 위한 방법
+-> 재사용보다는 급변하는 비즈니스로 인한 요구사항의 변화에 탄력적으로 대응할 수 있는 '변화가 쉬운 컴포넌트 구조'라고 이야기하고 있다.
+( component : 프로그램(class or object)들이 모여 독립적인 기능단위를 구성하고 부품화될 때 컴포넌트라고 한다 )
+
+-> 코드 안에 완벽하게 일치하지는 않지만 조금씩 다른 코드들이 중복될때, 그 코드가 하는 일이 같은 경우가 대부분이다.
+   이 경우, 중복되는 코드 중 일부분을 바꿀 경우 모든 클래스 안의 중복되 부분을 모두 고쳐야 한다
+   이는 유지보수를 힘들게 하기 때문에
+   ex) 	Tansaction 처리
+	   	DAO에서 sql문 예외에 대해 try{}catch{}finally 처리를 하는 부분은 모든 메서드에서 중복된다
+	   	이 경우,  AOP를 적용해서 같은 기능을 하는 코드들을 분리하여 유지보수성이 좋게 한다..
+  
+  
+   <aop:config> 
+    <aop:pointcut /> : pointcut 설정
+    <aop:aspect> : aspect를 설정
+        <aop:before /> : method 실행 전
+        <aop:after-returning /> : method 정상 실행 후
+        <aop:after-throwing /> : method 예외 발생 시
+        <aop:after /> : method 실행 후 (예외 발생 예부 상관 없음)
+        <aop:around /> : 모든 시점 적용 가능
+	    </aop:aspect>
+	</aop:config> 
+	
+======================================================================================================================	
+4/19
+Framework : 개발하는 데 필요한 component와 설계를 제공 - 반완전
+
+Spring Framework
+- IOC
+- DL
+- DI
+- Maven
+- Log4J
+- AOP
+	- AOP 용어
+		- advice
+		- pointcut
+
+======================================================================================================================	
+
+1. IOC 
+기존 Controller - Service - DAO - DBCP는 의존관계(Controller는 Service가 있어야 하고, ...DAO는 DBCP가 있어야 한다)
+	-> IOC방식은 기존의 의존관계를 역제어해서 SpringContainer가 대신 해주는거
+	-> Why? : 결합도를 낮추기 위해 -> 유지보수성이 좋아진다
+2. DL : Lookup 검색
+3. DI : Injection 의존하는 측에서 의존대상을 container로부터 주입받는것
+4. AOP
+: Aspect Oriented Programming  관점 지향 프로그래밍
+
+======================================================================================================================
+오버로딩  "같은 클래스내에서 같은 이름의 메서드를 사용하는것"
+오버라이딩 "부모Class에서 정의한 메서드를 자식 Class에서 변경하는 것"
+
+Interface
+자바의 일반 상속에서 하지 못하는 다중 상속을 가능하게 해서 
+여러 종류의 부모 클래스의 멤버를 물려받으면서 다양한 계층구조 형성을 통해 
+다형성 적용환경을 제공한다.
+예를 들어 플레이어라는 인터페이스를 곰플레이어, 알송플레이어, ...등의 플레이어가 IMPLEMENTS함으로써
+하나의 INTERFACE로 표준화에 기여한다
+
+IOC(DI,DL)
+IOC는 역제어로 DI(injection) 방식과 DL(lookup)방식으로 이루어진다.
+사용자는 기존에 필요한 객체를 직접 생성해서 써야 했다면, IOC를 통해 스프링 컨테이너로부터 필요한 객체를 받아 쓸 수 있다.
+그로 인해, 코드간의 결합도가 낮아져 유지보수가 쉬워짐
+
+JDBC,DB(DML,DDL,DLL,JOIN)
+자바 어플리케이션과 DB를 연동하기 위한 언어로
+드라이버 로딩,Connection, PrepareStatement, ResultSet을 통해 개발한다.
+
+DB에는 DML,DDL,DLL이 있는데
+DDL은 create,drop,alter
+DML은 insert,delet,update
+DQL은 select
+DLL은 commit,rollback,grant가 있다.
+
+1. DDL ( Data Definition Language ) : 
+		create : table 생성 
+		drop : table 삭제 
+		alter : table 정보 수정 
+	2. DML ( Data Manipulation Language ) 
+		insert : 정보 추가 
+		delete : 정보 삭제 
+		update : 정보 수정 	
+	3. DQL ( Data Query Language )
+		select : 정보 조회 
+	4. DCL ( Data Control Language )
+		commit : 트랜잭션(작업단위)의 작업결과를 실제로 반영  
+		rollback : 트랜잭션의 작업결과를 취소하고 원래대로 복구 
+		grant : 권한부여 
+MYBATIS
+
+AOP
+
+최근 프로젝트 소개
+
+
+
+
+

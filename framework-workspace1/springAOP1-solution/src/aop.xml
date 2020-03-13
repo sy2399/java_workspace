@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+	<bean id="memberService" class="model.MemberService"></bean>
+	<bean id="productService" class="model.ProductService"></bean>
+
+	<!-- AOP 설정 -->
+<!-- 	<bean id="loggingService" class="aop.common.LoggigService"></bean>
+	<aop:config>
+	aspect : 공통관심사를 처리 
+		<aop:aspect ref="loggingService">
+			
+				advicd : 공통관심사항 적용시점
+				pointcut : 적용대상범위
+				
+				before advice : 적용시점을 메서드 실행전
+				within pointcut : model package 이하의 모든 메서드가 적용 대상
+			
+			<aop:before method="beforeLogging" pointcut="within(model.*)" />
+			PointCut : 대상을 지정하는 행의
+		</aop:aspect>
+	</aop:config> -->
+
+</beans> 

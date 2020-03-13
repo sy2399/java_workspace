@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id = "car" class = "model.Car">
+	<property name="model">
+		<value>봉고</value>
+	</property>
+	<property name="price">
+		<value>100</value>
+	</property>
+</bean>
+
+<bean id = "customer" class = "model.Customer">
+	<constructor-arg>
+		<value>김성환</value>
+	</constructor-arg>
+	
+	<constructor-arg>
+		<ref bean = "car"/>
+	</constructor-arg>
+</bean>
+</beans>

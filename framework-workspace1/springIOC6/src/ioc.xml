@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id = "school" class = "model.School">
+	<property name="studentNameList">
+		<list>
+			<value>김성환</value>
+			<value>김문일</value>
+			<value>김규익</value>
+		</list>
+	</property>
+	<property name="busList">
+		<list>
+			<ref bean = "bus1"/>
+			<ref bean = "bus2"/>
+		</list>
+	</property>
+	<property name="busMap">
+		<map>
+			<entry key = "busOne" value-ref="bus1"/>
+			<entry key = "busTwo" value-ref="bus2"/>
+		</map>
+	</property>
+</bean>
+<bean id = "bus1" class = "model.Bus">
+	<constructor-arg value="현대"/>
+	<constructor-arg value="25"/>
+</bean>
+<bean id = "bus2" class = "model.Bus">
+	<constructor-arg value="기아"/>
+	<constructor-arg value="40"/>
+</bean>
+
+
+</beans>
